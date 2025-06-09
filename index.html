@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Kevin Lucongsang - Cartographe Créatif</title>
+  <style>
+    @font-face {
+      font-family: 'HunterRiver';
+      src: url('./font/HunterRiver-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #f8f8f8;
+      color: #111;
+    }
+
+    header {
+      text-align: center;
+      padding: 0rem 1rem 2rem;
+    }
+
+    .logo-name {
+      font-family: 'HunterRiver', cursive;
+      font-size: 5.5rem;
+      line-height: 0.5;
+      color: #222;
+      opacity: 0.9;
+      margin: 90px;
+    }
+
+    .subtitle {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #666;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 2rem;
+      padding: 2rem 1rem 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      justify-items: center;
+    }
+
+    .project {
+      width: 100%;
+      max-width: 450px;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 350px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 4px;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+    .image-container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f8f8f8;
+      transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+      transform: translateY(0);
+    }
+
+    .image-container img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+    }
+
+    .project:hover .image-container {
+      transform: translateY(-100%);
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: var(--overlay-color, #E94E77);
+      color: white;
+      padding: 2.5rem;
+      padding-bottom: 5rem;
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: left;
+      z-index: 2;
+      box-sizing: border-box;
+      padding-top: 40px;
+      min-height: 350px;
+    }
+
+    .project:hover .overlay {
+      transform: translateY(0);
+    }
+
+    .overlay strong {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      margin-top: 0;
+      line-height: 1.3;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .overlay p {
+      font-size: 1rem;
+      margin: 0 0 1.2rem;
+      max-width: 85%;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    .overlay em {
+      font-family: 'IBM Plex Serif', serif;
+      font-style: italic;
+      margin-bottom: 1rem;
+      display: block;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .overlay small {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .arrow {
+      font-size: 2.5rem;
+      position: absolute;
+      bottom: 2.5rem;
+      left: 2.5rem;
+      opacity: 0.9;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .project:hover .arrow {
+      transform: translateX(5px);
+      opacity: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      font-size: 0.9rem;
+      background: #2a2a2a;
+      color: white;
+      position: flex;
+      bottom: 0;
+    }
+
+    .contact a {
+      color: white;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: all 0.3s ease;
+      padding: 0.3rem 0;
+      position: relative;
+    }
+
+    .contact a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+
+    .contact a:hover:after {
+      width: 100%;
+    }
+
+    /* Palette de couleurs */
+    .project[data-color="rose"] .overlay { --overlay-color: #E84393; }
+    .project[data-color="bleu"] .overlay { --overlay-color: #0984e3; }
+    .project[data-color="vert"] .overlay { --overlay-color: #00b894; }
+    .project[data-color="violet"] .overlay { --overlay-color: #6c5ce7; }
+    .project[data-color="orange"] .overlay { --overlay-color: #e17055; }
+    .project[data-color="turquoise"] .overlay { --overlay-color: #00cec9; }
+    .project[data-color="mauve"] .overlay { --overlay-color: #a29bfe; }
+    .project[data-color="jaune"] .overlay { --overlay-color: #fdcb6e; }
+    .project[data-color="bordeaux"] .overlay { --overlay-color: #d63031; }
+    .project[data-color="marine"] .overlay { --overlay-color: #2d3436; }
+
+    @media (min-width: 1200px) {
+      .grid {
+        max-width: 1600px;
+      }
+      
+      .project {
+        max-width: 500px;
+      }
+    }
+
+
+    footer {
+  background: #2a2a2a;
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.signature {
+  font-family: 'HunterRiver', cursive;
+  font-size: 2.5rem;
+  opacity: 0.9;
+  letter-spacing: 2px;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 3rem;
+  margin: 1rem 0;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  opacity: 0.8;
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.contact-value {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-top: 1rem;
+}
+
+/* Version mobile */
+@media (max-width: 600px) {
+  .contact-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .signature {
+    font-size: 2rem;
+  }
+}
+
+#loader {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #666;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#loader::after {
+  content: "";
+  margin-top: 1.5rem;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #666;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+body.loaded #loader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div id="loader">
+    Chargement…
+  </div>
+  
+  <header>
+    <h1 class="logo-name">Kevin<br>Lucongsang</h1>
+    <div class="subtitle">cartographie, infographie & dataviz</div>
+  </header>
+
+  <main class="grid">
+    <!-- Projet 1 -->
+    <a href="carte1.html" class="project" data-color="bleu">
+      <div class="image-container">
+        <img src="./assets/BX1.webp" alt="Cartographie des boulangeries bordelaises">
+      </div>
+      <div class="overlay">
+        <strong>Gourmandises à portée de tram</strong>
+        <p>Une analyse spatiale des boulangeries autour des stations de tramway bordelaises. Où trouver vos pâtisseries favorites en un clin d'œil.</p>
+        <em>Octobre 2024</em>
+        <small>QGIS • Illustrator • GTFS</small>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Projet 2 -->
+    <a href="carte2.html" class="project" data-color="orange">
+      <div class="image-container">
+        <img src="./assets/LB1.webp" alt="Dataviz sportive NBA">
+      </div>
+      <div class="overlay">
+        <strong>La NBA sous un nouvel angle</strong>
+        <p>Visualisation innovante des performances sportives. Une approche esthétique des données statistiques.</p>
+        <em>Octobre 2024</em>
+        <small>Design d'information • DataViz</small>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Projet 3 -->
+    <a href="carte3.html" class="project" data-color="vert">
+      <div class="image-container">
+        <img src="./assets/US1.webp" alt="Carte bivariée santé-environnement">
+      </div>
+      <div class="overlay">
+        <strong>Pollution & Santé : le lien cartographié</strong>
+        <p>Corrélations spatiales entre qualité de l'air et prévalence du diabète. Une analyse visuelle percutante.</p>
+        <em>Octobre 2024</em>
+        <small>QGIS • Analyse spatiale</small>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Projet 4 -->
+    <a href="https://lb-dataviz.vercel.app/" target="_blank" class="project" data-color="bordeaux">
+      <div class="image-container">
+        <img src="./assets/TEST.png" alt="Dataviz interactive NBA">
+      </div>
+      <div class="overlay">
+        <strong>Lebron James : L'odyssée statistique</strong>
+        <p>Exploration interactive des performances légendaires de LBJ. Une immersion dans les données.</p>
+        <em>Mai 2025</em>
+        <small>D3.js • Data storytelling</small>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+
+    <!-- Projet 5 -->
+    <a href="https://sigatnguyen.github.io/MAKARTO_OFC/" target="_blank" class="project" data-color="marine">
+      <div class="image-container">
+        <img src="./assets/TEST2.png" alt="Narration cartographique">
+      </div>
+      <div class="overlay">
+        <strong>Hiroshima-Nagasaki : Mémoire cartographique</strong>
+        <p>Récit visuel des bombardements atomiques. Une expérience scroll immersive et poignante.</p>
+        <em>Mai 2025</em>
+        <small>MapLibre • Scrollytelling</small>
+        <div class="arrow">→</div>
+      </div>
+    </a>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="signature">KL</div>
+      <div class="contact-links">
+        <a href="mailto:kevin.lucongsang@gmail.com" class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">kevin.lucongsang@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/kevinlucongsang" target="_blank" class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">/kevinlucongsang</span>
+        </a>
+        <a href="https://github.com/SIGATNguyen" target="_blank" class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">@SIGATNguyen</span>
+        </a>
+      </div>
+      <div class="copyright">© 2025 Kévin LU CONG SANG</div>
+    </div>
+  </footer>
+  <script>
+    window.addEventListener("load", function () {
+      document.body.classList.add("loaded");
+    });
+  </script>
+  
+</body>
+</html>
