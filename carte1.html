@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attention à votre ligne !</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Serif:ital,wght@1,500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #f5f9ff;
+      color: #111;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      color: #0984e3;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .back:hover {
+      color: #0768b2;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #222;
+    }
+
+    .image-container {
+      margin: 3rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .image-container img {
+      width: 100%;
+      display: block;
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section h2 {
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: #333;
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    .section p {
+      margin: 0 0 1.5rem;
+    }
+
+    .meta {
+      font-family: 'IBM Plex Mono', monospace;
+      color: #555;
+      font-size: 0.95rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+    }
+
+    a {
+      color: #0984e3;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0768b2;
+      text-decoration: underline;
+    }
+
+    .techno-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .techno-item {
+      background: #e8f0fe;
+      color: #0a5eb2;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 2rem auto;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back">← Retour au portfolio</a>
+
+    <h1>Attention à votre ligne !</h1>
+
+    <div class="image-container">
+      <img src="./assets/BX.webp" alt="Carte : Attention à votre ligne !">
+    </div>
+
+    <div class="section">
+      <h2>Contexte</h2>
+      <p>Dans le cadre de mon master, nous devions réaliser une carte à partir de données GTFS (General Transit Feed Specification). J’ai choisi de traiter ce sujet de manière ludique et visuelle en croisant les lignes de tramway de Bordeaux avec la localisation des boulangeries.
+
+        Cette carte met en évidence, avec humour, l’accessibilité aux services de bouche en ville. Elle compare les différentes lignes selon le nombre de boulangeries situées à proximité immédiate des arrêts (isochrone de 8 minutes à pied), tout en illustrant la fréquence de passage pour établir un classement gourmand des lignes les mieux desservies pour les amateurs de pain et de viennoiseries.</p>
+    </div>
+
+    <div class="section">
+      <h2>Approche technique</h2>
+      <p>Le projet s'appuie sur des données issues d'OpenStreetMap pour la localisation des boulangeries, croisées avec les données GTFS des lignes de tram de Bordeaux. Le traitement spatial a été réalisé sous QGIS, permettant notamment de générer des isochrones piétons autour des arrêts.
+        La cartographie a ensuite été mise en forme graphiquement dans Illustrator, avec une attention particulière portée à la lisibilité et à l’esthétique. L’ensemble adopte un style visuel inspiré de la presse papier, dans une approche volontairement ludique et détournée des codes traditionnels de la cartographie technique.
+        
+        </p>
+      
+      <div class="techno-list">
+        <span class="techno-item">QGIS</span>
+        <span class="techno-item">GTFS</span>
+        <span class="techno-item">Illustrator</span>
+        <span class="techno-item">OSM</span>
+        <span class="techno-item">Cartographie ludique</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Résultats</h2>
+      <p>Le projet a mobilisé l’ensemble de la chaîne de production d’une carte thématique : analyse spatiale, choix et pondération des indicateurs, traitement des données issues de différentes sources, puis design et réalisation graphique.
+
+        Le résultat est une cartographie lisible, impactante et décalée, qui illustre de manière originale un sujet du quotidien tout en valorisant les potentialités des données de transport et des SIG dans une approche créative.</p>
+    </div>
+
+    <div class="meta">
+      <p>Projet réalisé en octobre 2024</p>
+      <p>Pour en savoir plus : <a href="mailto:kevin.lucongsang@gmail.com">me contacter</a></p>
+    </div>
+  </div>
+</body>
+</html>
