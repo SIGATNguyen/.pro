@@ -1,0 +1,16 @@
+{
+    "rewrites": [
+      {
+        "source": "/pollution",
+        "destination": "/carte3.html"
+      },
+      {
+        "source": "/gtfs",
+        "destination": "/carte1.html"
+      },
+      {
+        "source": "/lebronjames",
+        "destination": "/carte2.html"
+      }
+    ]
+  }
