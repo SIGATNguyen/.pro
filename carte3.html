@@ -2,10 +2,51 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Pollution & Santé : le lien cartographié</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Serif:ital,wght@1,500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
   <style>
+    #loader {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f5fbf9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: #666;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #loader::after {
+      content: "";
+      margin-top: 1.5rem;
+      width: 24px;
+      height: 24px;
+      border: 3px solid #00b894;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    body.loaded #loader {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
     body {
       margin: 0;
       font-family: 'IBM Plex Sans', sans-serif;
@@ -13,6 +54,12 @@
       color: #111;
       line-height: 1.7;
       font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    body.loaded {
+      opacity: 1;
     }
 
     .container {
@@ -46,11 +93,14 @@
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transform: translateZ(0);
     }
 
     .image-container img {
       width: 100%;
       display: block;
+      max-width: 100%;
+      height: auto;
     }
 
     .section {
@@ -115,33 +165,40 @@
       h1 {
         font-size: 1.8rem;
       }
+
+      .image-container {
+        margin: 2rem 0;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
     }
   </style>
 </head>
 <body>
+  <div id="loader">Chargement en cours...</div>
+
   <div class="container">
     <a href="index.html" class="back">← Retour au portfolio</a>
 
     <h1>Pollution & Santé : le lien cartographié</h1>
 
     <div class="image-container">
-      <img src="./assets/US1.webp" alt="Carte bivariée montrant la corrélation entre qualité de l'air et prévalence du diabète aux États-Unis">
+      <img src="./assets/US1.webp" alt="Carte bivariée montrant la corrélation entre qualité de l'air et prévalence du diabète aux États-Unis" loading="lazy">
     </div>
 
     <div class="section">
       <h2>Contexte</h2>
-      <p>Dans le cadre du master, un exercice portait sur la réalisation d'une carte bivariée croisant deux indicateurs spatiaux. J’ai choisi de m’intéresser à la relation entre pollution de l’air et santé publique aux États-Unis.</p>
+      <p>Dans le cadre du master, un exercice portait sur la réalisation d'une carte bivariée croisant deux indicateurs spatiaux. J'ai choisi de m'intéresser à la relation entre pollution de l'air et santé publique aux États-Unis.</p>
 
-      <p>Cette visualisation explore les corrélations spatiales entre la qualité de l'air (PM2.5) et la prévalence du diabète de type 2. L’approche bivariée permet de révéler des schémas géographiques souvent invisibles dans des analyses unidimensionnelles.</p>
+      <p>Cette visualisation explore les corrélations spatiales entre la qualité de l'air (PM2.5) et la prévalence du diabète de type 2. L'approche bivariée permet de révéler des schémas géographiques souvent invisibles dans des analyses unidimensionnelles.</p>
       
-      <p>Le projet s’inscrit dans une réflexion plus large sur les déterminants environnementaux de la santé et les inégalités d’exposition à la pollution selon les territoires.</p>
-          </div>
+      <p>Le projet s'inscrit dans une réflexion plus large sur les déterminants environnementaux de la santé et les inégalités d'exposition à la pollution selon les territoires.</p>
+    </div>
 
     <div class="section">
       <h2>Approche technique</h2>
-      <p>La carte combine deux bases de données à l’échelle des comtés américains : les concentrations annuelles moyennes de particules fines (PM2.5) issues de l’EPA, et les taux de diabète de type 2 rapportés par les CDC.</p>
+      <p>La carte combine deux bases de données à l'échelle des comtés américains : les concentrations annuelles moyennes de particules fines (PM2.5) issues de l'EPA, et les taux de diabète de type 2 rapportés par les CDC.</p>
 
-      <p>Une symbologie bivariée en 3x3 classes a été construite dans <strong>QGIS</strong>, à partir d’une matrice de couleurs spécialement pensée pour croiser ces deux dimensions. La mise en page finale a été réalisée sous <strong>Illustrator</strong>, en intégrant graphiques, cartouche et éléments de lecture visuelle.</p>
+      <p>Une symbologie bivariée en 3x3 classes a été construite dans <strong>QGIS</strong>, à partir d'une matrice de couleurs spécialement pensée pour croiser ces deux dimensions. La mise en page finale a été réalisée sous <strong>Illustrator</strong>, en intégrant graphiques, cartouche et éléments de lecture visuelle.</p>
             
       <div class="techno-list">
         <span class="techno-item">QGIS</span>
@@ -151,17 +208,32 @@
 
     <div class="section">
       <h2>Résultats</h2>
-      <p>La carte met en évidence des regroupements géographiques clairs dans le Sud-Est des États-Unis — notamment en Louisiane, Mississippi, Alabama et Arkansas — où fortes concentrations de pollution de l’air (PM2.5) coïncident avec des taux de diabète particulièrement élevés.</p>
+      <p>La carte met en évidence des regroupements géographiques clairs dans le Sud-Est des États-Unis — notamment en Louisiane, Mississippi, Alabama et Arkansas — où fortes concentrations de pollution de l'air (PM2.5) coïncident avec des taux de diabète particulièrement élevés.</p>
 
-      <p>Les Appalaches présentent également une corrélation notable entre mauvaise qualité de l’air et prévalence du diabète. À l’inverse, plusieurs zones de l’Ouest, notamment la Californie, affichent une forte pollution mais une prévalence plus faible du diabète, révélant des contrastes intéressants.</p>
+      <p>Les Appalaches présentent également une corrélation notable entre mauvaise qualité de l'air et prévalence du diabète. À l'inverse, plusieurs zones de l'Ouest, notamment la Californie, affichent une forte pollution mais une prévalence plus faible du diabète, révélant des contrastes intéressants.</p>
       
-      <p>Cette carte met en lumière l’intérêt de l’analyse bivariée pour explorer les effets cumulés de facteurs environnementaux et sanitaires à l’échelle territoriale.</p>
-                </div>
+      <p>Cette carte met en lumière l'intérêt de l'analyse bivariée pour explorer les effets cumulés de facteurs environnementaux et sanitaires à l'échelle territoriale.</p>
+    </div>
 
     <div class="meta">
       <p>Projet réalisé en octobre 2024</p>
-      <p>Pour en savoir plus : <a href="mailto:kevin.lucongsang@gmail.com">me contacter</p>
+      <p>Pour en savoir plus : <a href="mailto:kevin.lucongsang@gmail.com">me contacter</a></p>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function hideLoader() {
+        document.body.classList.add('loaded');
+        document.body.style.opacity = '1';
+      }
+
+      // Cache le loader quand la page est prête
+      window.addEventListener('load', hideLoader);
+      
+      // Fallback au cas où l'événement load ne se déclenche pas
+      setTimeout(hideLoader, 5000);
+    });
+  </script>
 </body>
 </html>
