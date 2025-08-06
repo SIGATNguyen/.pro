@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/MARKARTO",
+      "destination": "https://sigatnguyen.github.io/MAKARTO_OFC/",
+      "permanent": false
+    }
+  ]
+}
