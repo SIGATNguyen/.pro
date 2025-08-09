@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Attention à votre ligne !</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Serif:ital,wght@1,500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'IBM Plex Sans', sans-serif;
-      background: #f5f9ff;
+      font-family: 'Space Mono', monospace;
+      background: white;
       color: #111;
       line-height: 1.7;
       font-size: 1rem;
@@ -25,21 +25,28 @@
       display: inline-block;
       margin-bottom: 2rem;
       text-decoration: none;
-      color: #0984e3;
+      background-color: #FEFF99;
+      color: #000;
       font-weight: bold;
-      transition: color 0.3s ease;
+      padding: 0.3rem 0.8rem;
+      transition: background-color 0.3s ease;
     }
 
     .back:hover {
-      color: #0768b2;
+      background-color: #f0f172;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: #222;
-    }
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #000;
+  display: inline-block;
+  padding: 0.2rem 0.4rem;
+  text-decoration: underline;
+  text-decoration-thickness: 3px; /* épaisseur personnalisée */
+  text-underline-offset: 4px; /* espace entre le texte et le soulignement */
+}
 
     .image-container {
       margin: 3rem 0;
@@ -58,12 +65,14 @@
     }
 
     .section h2 {
-      font-family: 'IBM Plex Serif', serif;
       font-size: 1.3rem;
       margin-bottom: 0.8rem;
-      color: #333;
+      color: #000;
       font-weight: 500;
       font-style: italic;
+      background-color: #FEFF99;
+      display: inline-block;
+      padding: 0.1rem 0.3rem;
     }
 
     .section p {
@@ -71,24 +80,23 @@
     }
 
     .meta {
-      font-family: 'IBM Plex Mono', monospace;
-      color: #555;
+      color: #333;
       font-size: 0.95rem;
       margin-top: 2rem;
       padding-top: 1rem;
-      border-top: 1px solid #eee;
+      border-top: 1px solid white;
     }
 
     a {
-      color: #0984e3;
-      text-decoration: none;
+      color: #000;
+      text-decoration: underline;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
     a:hover {
-      color: #0768b2;
-      text-decoration: underline;
+      background-color: #FEFF99;
+      text-decoration: none;
     }
 
     .techno-list {
@@ -99,12 +107,20 @@
     }
 
     .techno-item {
-      background: #e8f0fe;
-      color: #0a5eb2;
+      background: #FEFF99;
+      color: #000;
       padding: 0.3rem 0.8rem;
-      border-radius: 20px;
       font-size: 0.85rem;
-      font-family: 'IBM Plex Mono', monospace;
+      border-radius: 0; /* plus arrondi */
+    }
+
+    footer {
+      background: #000000;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      margin-top: 4rem;
     }
 
     @media (max-width: 600px) {
@@ -163,5 +179,9 @@
       <p>Pour en savoir plus : <a href="mailto:kevin.lucongsang@gmail.com">me contacter</a></p>
     </div>
   </div>
+
+  <footer>
+    © 2025 Kévin LU CONG SANG — Tous droits réservés
+  </footer>
 </body>
 </html>
