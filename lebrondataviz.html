@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LeBron James — Une carrière de ROI</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Serif:ital,wght@1,500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'IBM Plex Sans', sans-serif;
-      background: #fff9f7;
+      font-family: 'Space Mono', monospace;
+      background: white;
       color: #111;
       line-height: 1.7;
       font-size: 1rem;
@@ -25,20 +25,27 @@
       display: inline-block;
       margin-bottom: 2rem;
       text-decoration: none;
-      color: #FDB46A;
+      background-color: #FEFF99;
+      color: #000;
       font-weight: bold;
-      transition: color 0.3s ease;
+      padding: 0.3rem 0.8rem;
+      transition: background-color 0.3s ease;
     }
 
     .back:hover {
-      color: #E4934D;
+      background-color: #f0f172;
     }
 
     h1 {
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 1.5rem;
-      color: #222;
+      color: #000;
+      display: inline-block;
+      padding: 0.2rem 0.4rem;
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
     }
 
     .image-container {
@@ -58,12 +65,14 @@
     }
 
     .section h2 {
-      font-family: 'IBM Plex Serif', serif;
       font-size: 1.3rem;
       margin-bottom: 0.8rem;
-      color: #333;
+      color: #000;
       font-weight: 500;
       font-style: italic;
+      background-color: #FEFF99;
+      display: inline-block;
+      padding: 0.1rem 0.3rem;
     }
 
     .section p {
@@ -71,8 +80,7 @@
     }
 
     .meta {
-      font-family: 'IBM Plex Mono', monospace;
-      color: #555;
+      color: #333;
       font-size: 0.95rem;
       margin-top: 2rem;
       padding-top: 1rem;
@@ -80,15 +88,15 @@
     }
 
     a {
-      color: #e17055;
-      text-decoration: none;
+      color: #000;
+      text-decoration: underline;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
     a:hover {
-      color: #c45a40;
-      text-decoration: underline;
+      background-color: #FEFF99;
+      text-decoration: none;
     }
 
     .techno-list {
@@ -99,12 +107,20 @@
     }
 
     .techno-item {
-      background: #fceee9;
-      color: #b14c32;
+      background: #FEFF99;
+      color: #000;
       padding: 0.3rem 0.8rem;
-      border-radius: 20px;
       font-size: 0.85rem;
-      font-family: 'IBM Plex Mono', monospace;
+      border-radius: 0;
+    }
+
+    footer {
+      background: #000000;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      margin-top: 4rem;
     }
 
     @media (max-width: 600px) {
@@ -132,10 +148,9 @@
       <h2>Contexte</h2>
       <p>Dans le cadre du master, un exercice de datavisualisation nous a été proposé sur le thème de notre choix. Passionné par le sport, j’ai choisi de rendre hommage à la carrière exceptionnelle de LeBron James, l’un des plus grands joueurs de l’histoire de la NBA.</p>
 
-<p>Cette infographie compare ses statistiques emblématiques à celles de Michael Jordan, tout en mettant en lumière ses performances au sein des Cavaliers, du Heat et des Lakers.</p>
+      <p>Cette infographie compare ses statistiques emblématiques à celles de Michael Jordan, tout en mettant en lumière ses performances au sein des Cavaliers, du Heat et des Lakers.</p>
 
-<p>Pour y ajouter une dimension spatiale, j’ai intégré un <strong>"shoot chart"</strong> (carte de tirs), basé sur les coordonnées X/Y des tentatives de tirs effectuées durant la saison 2023-2024 — une façon d’introduire la géométrie du jeu dans la narration visuelle.</p>
-
+      <p>Pour y ajouter une dimension spatiale, j’ai intégré un <strong>"shoot chart"</strong> (carte de tirs), basé sur les coordonnées X/Y des tentatives de tirs effectuées durant la saison 2023-2024 — une façon d’introduire la géométrie du jeu dans la narration visuelle.</p>
     </div>
 
     <div class="section">
@@ -155,9 +170,13 @@
     </div>
 
     <div class="meta">
-      <p>Projet réalisé en octobre 2024 </p>
-      <p>Pour en savoir plus : <a href="mailto:kevin.lucongsang@gmail.com">me contacter</p>
+      <p>Projet réalisé en octobre 2024</p>
+      <p>Pour en savoir plus : <a href="mailto:kevin.lucongsang@gmail.com">me contacter</a></p>
     </div>
   </div>
+
+  <footer>
+    © 2025 Kévin LU CONG SANG — Tous droits réservés
+  </footer>
 </body>
 </html>
