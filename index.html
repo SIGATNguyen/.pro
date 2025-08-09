@@ -15,9 +15,9 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'IBM Plex Sans', sans-serif;
-      background: #f8f8f8;
-      color: #111;
+      font-family: 'Space Mono', monospace;
+      background: white;
+      color: black;
       overflow-x: hidden;
     }
 
@@ -31,7 +31,7 @@
       font-family: 'HunterRiver', cursive;
       font-size: 5.5rem;
       line-height: 0.5;
-      color: #222;
+      color: black;
       opacity: 0.9;
       margin: 90px;
     }
@@ -67,7 +67,6 @@
       align-items: center;
       min-height: 350px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 4px;
     }
 
     .project:hover {
@@ -108,7 +107,7 @@
       left: 0;
       right: 0;
       height: 100%;
-      background: var(--overlay-color, #E94E77);
+      background: var(--overlay-color, #000000);
       color: white;
       padding: 2.5rem;
       padding-bottom: 5rem;
@@ -147,7 +146,7 @@
     }
 
     .overlay em {
-      font-family: 'IBM Plex Serif', serif;
+      font-family: 'Space Mono', monospace;
       font-style: italic;
       margin-bottom: 1rem;
       display: block;
@@ -156,7 +155,7 @@
     }
 
     .overlay small {
-      font-family: 'IBM Plex Mono', monospace;
+      font-family: 'Space Mono', monospace;
       font-size: 0.9rem;
       opacity: 0.85;
       margin-bottom: 0.5rem;
@@ -213,16 +212,16 @@
     }
 
     /* Palette de couleurs */
-    .project[data-color="rose"] .overlay { --overlay-color: #E84393; }
-    .project[data-color="bleu"] .overlay { --overlay-color: #0984e3; }
-    .project[data-color="vert"] .overlay { --overlay-color: #00b894; }
-    .project[data-color="violet"] .overlay { --overlay-color: #6c5ce7; }
-    .project[data-color="orange"] .overlay { --overlay-color: #FDB46A; }
-    .project[data-color="turquoise"] .overlay { --overlay-color: #00cec9; }
-    .project[data-color="mauve"] .overlay { --overlay-color: #a29bfe; }
-    .project[data-color="jaune"] .overlay { --overlay-color: #fdcb6e; }
-    .project[data-color="bordeaux"] .overlay { --overlay-color: #d63031; }
-    .project[data-color="marine"] .overlay { --overlay-color: #2d3436; }
+    .project[data-color="rose"] .overlay { --overlay-color: #000000; }
+    .project[data-color="bleu"] .overlay { --overlay-color: #000000; }
+    .project[data-color="vert"] .overlay { --overlay-color: #000000; }
+    .project[data-color="violet"] .overlay { --overlay-color: #000000; }
+    .project[data-color="orange"] .overlay { --overlay-color: #000000; }
+    .project[data-color="turquoise"] .overlay { --overlay-color: #000000; }
+    .project[data-color="mauve"] .overlay { --overlay-color: #000000; }
+    .project[data-color="jaune"] .overlay { --overlay-color: #000000; }
+    .project[data-color="bordeaux"] .overlay { --overlay-color: #000000; }
+    .project[data-color="marine"] .overlay { --overlay-color: #000000; }
 
     @media (min-width: 1200px) {
       .grid {
@@ -235,7 +234,7 @@
     }
 
     footer {
-      background: #2a2a2a;
+      background: black;
       color: white;
       padding: 3rem 1rem;
       text-align: center;
@@ -371,9 +370,8 @@
     }
 
     .subtitle {
-  margin-bottom: 2rem;
-}
-
+      margin-bottom: 2rem;
+    }
 
     @media (max-width: 480px) {
       .logo-name {
@@ -406,7 +404,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      font-family: 'IBM Plex Sans', sans-serif;
+      font-family: 'Space Mono', monospace;
       color: #666;
       font-size: 1rem;
       letter-spacing: 0.1em;
@@ -448,7 +446,7 @@
 
   <main class="grid">
     <!-- Projet 1 -->
-    <a href="carte1.html" class="project" data-color="bleu">
+    <a href="attentionavotreligne.html" class="project" data-color="bleu">
       <div class="image-container">
         <img src="./assets/BX1.webp" alt="Cartographie des boulangeries bordelaises">
       </div>
@@ -462,7 +460,7 @@
     </a>
 
     <!-- Projet 2 -->
-    <a href="carte2.html" class="project" data-color="orange">
+    <a href="lebrondataviz.html" class="project" data-color="orange">
       <div class="image-container">
         <img src="./assets/LB1.webp" alt="Dataviz sportive NBA">
       </div>
@@ -476,7 +474,7 @@
     </a>
 
     <!-- Projet 3 -->
-    <a href="carte3.html" class="project" data-color="vert">
+    <a href="pollutionUSA.html" class="project" data-color="vert">
       <div class="image-container">
         <img src="./assets/US1.webp" alt="Carte bivariée santé-environnement">
       </div>
@@ -504,9 +502,9 @@
     </a>
 
     <!-- Projet 5 -->
-    <a href="https://sigatnguyen.github.io/MAKARTO_OFC/" target="_blank" class="project" data-color="marine">
+    <a href="https://sigatnguyen.github.io/Markarto/" target="_blank" class="project" data-color="marine">
       <div class="image-container">
-        <img src="./assets/TEST2.png" alt="Narration cartographique">
+        <img src="./assets/TEST4.png" alt="Narration cartographique">
       </div>
       <div class="overlay">
         <strong>Hiroshima-Nagasaki : Mémoire cartographique</strong>
