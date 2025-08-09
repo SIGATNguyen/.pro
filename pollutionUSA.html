@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Pollution & Santé : le lien cartographié</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Serif:ital,wght@1,500&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     #loader {
       position: fixed;
@@ -13,12 +13,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #f5fbf9;
+      background: white;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      font-family: 'IBM Plex Sans', sans-serif;
+      font-family: 'Space Mono', monospace;
       color: #666;
       font-size: 1rem;
       letter-spacing: 0.1em;
@@ -30,7 +30,7 @@
       margin-top: 1.5rem;
       width: 24px;
       height: 24px;
-      border: 3px solid #00b894;
+      border: 3px solid #000;
       border-top-color: transparent;
       border-radius: 50%;
       animation: spin 1s linear infinite;
@@ -49,8 +49,8 @@
 
     body {
       margin: 0;
-      font-family: 'IBM Plex Sans', sans-serif;
-      background: #f5fbf9;
+      font-family: 'Space Mono', monospace;
+      background: white;
       color: #111;
       line-height: 1.7;
       font-size: 1rem;
@@ -72,20 +72,27 @@
       display: inline-block;
       margin-bottom: 2rem;
       text-decoration: none;
-      color: #00b894;
+      background-color: #FEFF99;
+      color: #000;
       font-weight: bold;
-      transition: color 0.3s ease;
+      padding: 0.3rem 0.8rem;
+      transition: background-color 0.3s ease;
     }
 
     .back:hover {
-      color: #008a6e;
+      background-color: #f0f172;
     }
 
     h1 {
       font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 1.5rem;
-      color: #222;
+      color: #000;
+      display: inline-block;
+      padding: 0.2rem 0.4rem;
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
     }
 
     .image-container {
@@ -108,12 +115,14 @@
     }
 
     .section h2 {
-      font-family: 'IBM Plex Serif', serif;
       font-size: 1.3rem;
       margin-bottom: 0.8rem;
-      color: #333;
+      color: #000;
       font-weight: 500;
       font-style: italic;
+      background-color: #FEFF99;
+      display: inline-block;
+      padding: 0.1rem 0.3rem;
     }
 
     .section p {
@@ -121,8 +130,7 @@
     }
 
     .meta {
-      font-family: 'IBM Plex Mono', monospace;
-      color: #555;
+      color: #333;
       font-size: 0.95rem;
       margin-top: 2rem;
       padding-top: 1rem;
@@ -130,15 +138,15 @@
     }
 
     a {
-      color: #00b894;
-      text-decoration: none;
+      color: #000;
+      text-decoration: underline;
       font-weight: 500;
-      transition: color 0.3s ease;
+      transition: background-color 0.3s ease;
     }
 
     a:hover {
-      color: #008a6e;
-      text-decoration: underline;
+      background-color: #FEFF99;
+      text-decoration: none;
     }
 
     .techno-list {
@@ -149,12 +157,11 @@
     }
 
     .techno-item {
-      background: #e8f5f2;
-      color: #006a52;
+      background: #FEFF99;
+      color: #000;
       padding: 0.3rem 0.8rem;
-      border-radius: 20px;
       font-size: 0.85rem;
-      font-family: 'IBM Plex Mono', monospace;
+      border-radius: 0;
     }
 
     @media (max-width: 600px) {
@@ -227,11 +234,7 @@
         document.body.classList.add('loaded');
         document.body.style.opacity = '1';
       }
-
-      // Cache le loader quand la page est prête
       window.addEventListener('load', hideLoader);
-      
-      // Fallback au cas où l'événement load ne se déclenche pas
       setTimeout(hideLoader, 5000);
     });
   </script>
