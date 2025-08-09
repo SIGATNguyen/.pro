@@ -223,6 +223,8 @@
     .project[data-color="bordeaux"] .overlay { --overlay-color: #000000; }
     .project[data-color="marine"] .overlay { --overlay-color: #000000; }
 
+    
+
     @media (min-width: 1200px) {
       .grid {
         max-width: 1600px;
@@ -295,6 +297,7 @@
       margin-top: 1rem;
     }
 
+    
     /* Version mobile */
     @media (max-width: 768px) {
       body {
@@ -367,6 +370,8 @@
         bottom: 1.5rem;
         left: 2rem;
       }
+
+      
     }
 
     .subtitle {
@@ -388,8 +393,10 @@
       }
       
       .arrow {
-        font-size: 1.8rem;
-      }
+  right: 2.5rem !important;
+  left: auto !important;
+}
+
     }
 
     #loader {
@@ -432,6 +439,20 @@
       visibility: hidden;
       pointer-events: none;
     }
+
+    /* PATCH — flèches à droite (desktop + mobile) */
+.project .overlay .arrow {
+  right: 2.5rem !important;
+  left: auto !important;
+}
+
+@media (max-width: 768px) {
+  .project .overlay .arrow {
+    right: 2rem !important;
+    left: auto !important;
+  }
+}
+
   </style>
 </head>
 <body>
