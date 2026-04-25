@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attention à votre ligne ! | Kevin Lu Cong Sang</title>
+  <meta name="description" content="Cartographie ludique des boulangeries autour des lignes de tramway de Bordeaux, croisant données GTFS et OpenStreetMap.">
+  <meta property="og:title" content="Attention à votre ligne ! — Kevin Lu Cong Sang">
+  <meta property="og:description" content="Cartographie ludique des boulangeries autour des lignes de tramway de Bordeaux.">
+  <meta property="og:image" content="./assets/BX.webp">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/project.css">
+</head>
+<body style="--theme: #6e1d36">
+  <div class="container">
+    <div class="brand-strip">Kevin Lucongsang<span class="dot">·</span>cartographie, infographie &amp; dataviz</div>
+    <a href="index.html" class="back">← Retour au portfolio</a>
+
+    <h1>Attention à votre ligne !</h1>
+
+    <div class="image-container">
+      <img src="./assets/BX.webp" alt="Carte : Attention à votre ligne !" loading="lazy">
+    </div>
+
+    <div class="section">
+      <h2>Contexte</h2>
+      <p>Dans le cadre de mon master, nous devions réaliser une carte à partir de données GTFS (General Transit Feed Specification). J'ai choisi de traiter ce sujet de manière ludique et visuelle en croisant les lignes de tramway de Bordeaux avec la localisation des boulangeries.
+
+        Cette carte met en évidence, avec humour, l'accessibilité aux services de bouche en ville. Elle compare les différentes lignes selon le nombre de boulangeries situées à proximité immédiate des arrêts (isochrone de 8 minutes à pied), tout en illustrant la fréquence de passage pour établir un classement gourmand des lignes les mieux desservies pour les amateurs de pain et de viennoiseries.</p>
+    </div>
+
+    <div class="section">
+      <h2>Approche technique</h2>
+      <p>Le projet s'appuie sur des données issues d'OpenStreetMap pour la localisation des boulangeries, croisées avec les données GTFS des lignes de tram de Bordeaux. Le traitement spatial a été réalisé sous QGIS, permettant notamment de générer des isochrones piétons autour des arrêts.
+        La cartographie a ensuite été mise en forme graphiquement dans Illustrator, avec une attention particulière portée à la lisibilité et à l'esthétique. L'ensemble adopte un style visuel inspiré de la presse papier, dans une approche volontairement ludique et détournée des codes traditionnels de la cartographie technique.
+        </p>
+
+      <div class="techno-list">
+        <span class="techno-item">QGIS</span>
+        <span class="techno-item">GTFS</span>
+        <span class="techno-item">Illustrator</span>
+        <span class="techno-item">OSM</span>
+        <span class="techno-item">Cartographie ludique</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Résultats</h2>
+      <p>Le projet a mobilisé l'ensemble de la chaîne de production d'une carte thématique : analyse spatiale, choix et pondération des indicateurs, traitement des données issues de différentes sources, puis design et réalisation graphique.
+
+        Le résultat est une cartographie lisible, impactante et décalée, qui illustre de manière originale un sujet du quotidien tout en valorisant les potentialités des données de transport et des SIG dans une approche créative.</p>
+    </div>
+
+    <div class="meta">
+      <p>Projet réalisé en octobre 2024</p>
+      <p>Pour en savoir plus : <a href="mailto:kevin.lucongsang@gmail.com">me contacter</a></p>
+    </div>
+
+    <nav class="project-nav" aria-label="Navigation entre projets">
+      <a class="next" href="lebron-dataviz.html">
+        <span class="label">Projet suivant</span>
+        La NBA sous un nouvel angle →
+      </a>
+    </nav>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="contact-links">
+        <a href="mailto:kevin.lucongsang@gmail.com" class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">kevin.lucongsang@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/kevinlucongsang" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">/kevinlucongsang</span>
+        </a>
+      </div>
+      <div class="copyright">© 2025 Kévin LU CONG SANG</div>
+    </div>
+  </footer>
+</body>
+</html>

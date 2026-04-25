@@ -2,8 +2,23 @@
   "redirects": [
     {
       "source": "/MARKARTO",
-      "destination": "shttps://sigatnguyen.github.io/Markarto/",
+      "destination": "https://sigatnguyen.github.io/Markarto/",
       "permanent": false
+    },
+    {
+      "source": "/attentionavotreligne.html",
+      "destination": "/attention-a-votre-ligne.html",
+      "permanent": true
+    },
+    {
+      "source": "/lebrondataviz.html",
+      "destination": "/lebron-dataviz.html",
+      "permanent": true
+    },
+    {
+      "source": "/pollutionUSA.html",
+      "destination": "/pollution-usa.html",
+      "permanent": true
     }
   ]
 }
